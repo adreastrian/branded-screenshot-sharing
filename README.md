@@ -1,6 +1,11 @@
 # Branded Screenshot Sharing
 
-A branded screenshot viewer for [ss.sarkarripon.com](https://ss.sarkarripon.com), hosted on Netlify. Macshot uploads screenshots to a private Backblaze B2 bucket. Netlify Functions serve shared images using a read-only application key scoped to `shared-screenshots/`.
+A branded screenshot-sharing site at [ss.sarkarripon.com](https://ss.sarkarripon.com).
+
+## Hosting
+
+- **Backblaze B2** stores the screenshots in a private bucket. Macshot uploads the files there.
+- **Netlify** hosts the landing page and screenshot viewer. Netlify Functions serve shared images from Backblaze B2 using a read-only application key scoped to `shared-screenshots/`.
 
 ## Build
 
