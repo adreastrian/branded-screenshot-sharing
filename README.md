@@ -16,7 +16,7 @@ npm ci
 npm run build
 ```
 
-The Netlify configuration builds the landing page into `dist/` and bundles the viewer and image functions. Set `B2_KEY_ID` and `B2_APPLICATION_KEY` as runtime environment variables in Netlify. `B2_REGION` and `B2_BUCKET` can override the defaults in the source. Legacy short links use the original site's `screenshot-links` Netlify Blobs store.
+The Netlify configuration builds the landing page into `dist/` and bundles the viewer and image functions. Set `B2_KEY_ID`, `B2_APPLICATION_KEY`, `B2_BUCKET`, and `B2_REGION` as environment variables in Netlify. Without all four, image requests return 503. Legacy short links use the original site's `screenshot-links` Netlify Blobs store.
 
 ## Run your own copy
 
