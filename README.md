@@ -2,9 +2,11 @@
 
 A branded screenshot-sharing site at [ss.sarkarripon.com](https://ss.sarkarripon.com).
 
+I use [macshot](https://github.com/sw33tLie/macshot) to capture screenshots on macOS and upload them to Backblaze B2.
+
 ## Hosting
 
-- **Backblaze B2** stores the screenshots in a private bucket. Macshot uploads the files there.
+- **Backblaze B2** stores the screenshots in a private bucket.
 - **Netlify** hosts the landing page and screenshot viewer. Netlify Functions serve shared images from Backblaze B2 using a read-only application key scoped to `shared-screenshots/`.
 
 ## Build
