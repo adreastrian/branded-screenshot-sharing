@@ -1,6 +1,6 @@
 # Branded Screenshot Sharing
 
-A branded screenshot-sharing site at [ss.sarkarripon.com](https://ss.sarkarripon.com).
+A branded screenshot-sharing site at [ss.adreastrian.com](https://ss.adreastrian.com).
 
 I use [macshot](https://github.com/sw33tLie/macshot) to capture screenshots on macOS and upload them to Backblaze B2.
 
@@ -27,7 +27,7 @@ To serve screenshots under your own name, deploy a copy of this repository to Ne
 | `SITE_NAME` | The name in the header, page titles, and link previews. |
 | `SITE_URL` | The page the header name links to. |
 | `SITE_LOGO` | The logo path, for example `/logo.svg` for a file in `public/`. |
-| `SITE_LEGACY_LINKS` | `false`. Other sites have none of the original site's old short links. |
+| `SITE_LEGACY_LINKS` | `true` to resolve the old short links from the original site, ss.sarkarripon.com. Off by default. |
 | `B2_KEY_ID`, `B2_APPLICATION_KEY` | A read-only Backblaze B2 key scoped to `shared-screenshots/`. |
 | `B2_BUCKET`, `B2_REGION` | Your bucket name and its region. |
 
