@@ -1,6 +1,7 @@
 import { getStore } from "@netlify/blobs";
 import { decodeKey, failure, getImageType, imageResponse } from "../../lib/screenshot-storage.mjs";
 import { screenshotPage } from "../../lib/screenshot-page.mjs";
+import { site } from "../../lib/site.mjs";
 
 export const config = { path: ["/view/*", "/image/*", "/:slug"], preferStatic: true };
 
@@ -16,11 +17,11 @@ export default async function viewer(request) {
   try {
     if (pathname.startsWith("/view/")) {
       key = decodeKey(pathname.slice(6));
-    } else if (name === "2g60m6i2g.png") {
+    } else if (site.legacyLinks && name === "2g60m6i2g.png") {
       key = "shared-screenshots/2026/11/21/g60m6i2g.png";
     } else if (/^[a-z0-9]{8}\.png$/.test(name)) {
       key = "shared-screenshots/" + name;
-    } else if (/^[a-z0-9]{10}$/.test(name)) {
+    } else if (site.legacyLinks && /^[a-z0-9]{10}$/.test(name)) {
       // Existing links still resolve from the old lookup table.
       key = await getStore({ name: "screenshot-links", consistency: "strong" }).get(name);
     }
